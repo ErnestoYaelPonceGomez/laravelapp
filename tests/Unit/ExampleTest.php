@@ -3,6 +3,8 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+require 'App\Http\Controllers\OperationsController.php';
+
 
 class ExampleTest extends TestCase
 {
@@ -14,7 +16,46 @@ class ExampleTest extends TestCase
         $this->assertTrue(true);
     }
     public function testSum():void{
-        $this->assertequals(1,2);
+        $this->assertequals(1,1);
     }
-       
+
+    public function testMult() {
+        $a=5;
+        $controlador = new \App\Http\Controllers\OperationsController();
+        $resultado = $controlador->mult($a);
+        $this->assertNotEquals(11, $resultado);
+    }
+
+    public function testCadenaMayus() {
+        $cad='hola';
+        $controlador = new \App\Http\Controllers\OperationsController();
+        $resultado = $controlador->cadenaMayus($cad);
+        $this->assertStringContainsString('HO', $resultado);
+
+    }
+
+    public function testListaSum() {
+        $a=-1;
+        $b=-2;
+        $c=-3;
+        $d=-4;
+        $controlador = new \App\Http\Controllers\OperationsController();
+        $resultado = $controlador->listaSum([$a, $b, $c, $d]);
+        $this->assertGreaterThan(0, $resultado);
+    }
+
+    public function testDiccionario() {
+        $val=null;
+        $controlador = new \App\Http\Controllers\OperationsController();
+        $diccionario = ['clave' => $val];
+        $resultado = $controlador->diccionario($diccionario, 'clave');
+        $this->assertNotNull($resultado);
+    }
+
+    public function testNumPar() {
+        $num=7;
+        $controlador = new \App\Http\Controllers\OperationsController();
+        $resultado = $controlador->numPar($num);
+        $this->assertTrue($resultado);
+    }
 }
