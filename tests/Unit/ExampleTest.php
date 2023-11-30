@@ -23,14 +23,14 @@ class ExampleTest extends TestCase
         $a=5;
         $controlador = new \App\Http\Controllers\OperationsController();
         $resultado = $controlador->mult($a);
-        $this->assertNotEquals(11, $resultado);
+        $this->assertNotEquals(10, $resultado);
     }
 
     public function testCadenaMayus() {
         $cad='hola';
         $controlador = new \App\Http\Controllers\OperationsController();
         $resultado = $controlador->cadenaMayus($cad);
-        $this->assertStringContainsString('HO', $resultado);
+        $this->assertStringContainsString('po', $resultado);
 
     }
 
