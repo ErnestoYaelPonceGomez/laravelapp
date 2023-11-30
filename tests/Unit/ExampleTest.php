@@ -45,7 +45,7 @@ class ExampleTest extends TestCase
     }
 
     public function testDiccionario() {
-        $val=null;
+        $val=1;
         $controlador = new \App\Http\Controllers\OperationsController();
         $diccionario = ['clave' => $val];
         $resultado = $controlador->diccionario($diccionario, 'clave');
@@ -53,7 +53,7 @@ class ExampleTest extends TestCase
     }
 
     public function testNumPar() {
-        $num=7;
+        $num=8;
         $controlador = new \App\Http\Controllers\OperationsController();
         $resultado = $controlador->numPar($num);
         $this->assertTrue($resultado);
