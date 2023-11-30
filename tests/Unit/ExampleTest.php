@@ -45,7 +45,7 @@ class ExampleTest extends TestCase
     }
 
     public function testDiccionario() {
-        $val=NULL;
+        $val=1;
         $controlador = new \App\Http\Controllers\OperationsController();
         $diccionario = ['clave' => $val];
         $resultado = $controlador->diccionario($diccionario, 'clave');
